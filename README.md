@@ -1,4 +1,4 @@
-# Seiza 星座: e-commerce de portfólio
+# Seiza 星座
 
 Vitrine que imita uma arara de loja física. Feita com React, TypeScript, Vite e Framer Motion. Não tem back-end: catálogo, estoque e sacola são mockados.
 
