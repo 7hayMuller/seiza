@@ -23,24 +23,4 @@ npm run build:single  # um único index.html em /dist-single
 | Produto | `ProductPage.tsx` | Cor, tamanho (com esgotados), guia de medidas, quantidade. |
 | Sacola | `CartDrawer.tsx` + `hooks/useCart.ts` | Estado em React, salvo no `localStorage`. O checkout é simulado. |
 
-## Usar fotos (Unsplash etc.)
 
-1. Remova o fundo e exporte em **PNG ou WebP com transparência, proporção 3:4** (ex.: 900×1200).
-2. Deixe **o gancho do cabide no topo, centralizado**, com a mesma margem em todas as fotos. É isso que alinha as peças no trilho.
-3. Salve em `src/assets/garments/` e importe em `src/data/products.ts` (assim a imagem também entra no build de arquivo único):
-
-```ts
-import teePretoFrente from '../assets/garments/tee-preto-frente.webp';
-// ...
-{ id: 'preto', name: 'Preto', swatch: '#1B1C20', ..., images: { front: teePretoFrente, back: teePretoCostas }, drawHanger: true }
-```
-
-`drawHanger: true` desenha o gancho do cabide atrás da foto, para imagens que vêm sem cabide. Exemplo pronto: Jaqueta College 星座.
-
-Sem `images`, a peça aparece como silhueta SVG. Sem `back`, o botão Frente/Costas some para aquela cor.
-
-Dica: no Unsplash é difícil achar a mesma peça em várias cores e de costas. Duas saídas:
-- usar uma cor por peça e deixar só a etiqueta daquela cor;
-- fotografar uma peça branca/clara e gerar as outras cores com uma camada `multiply` no Figma/Photoshop.
-
-Os créditos do Unsplash não são obrigatórios, mas é bom citar os fotógrafos no "Sobre".
